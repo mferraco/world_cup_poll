@@ -1,0 +1,10 @@
+development:
+  server_name: http://localhost:3000/
+
+staging:
+  server_name: http://faces.drp.cs.cmu.edu/
+
+production:
+  server_name: http://faces.drp.cs.cmu.edu/
+
+  # http://blog.revathskumar.com/2012/06/rails-loading-configuration-from-custom.html
