@@ -1,4 +1,10 @@
 WorldCupPoll::Application.routes.draw do
+  resources :players
+
+  resources :polls
+
+  resources :teams
+
   resources :users
 
   get '/login', to: 'sessions#new', as: 'login'
