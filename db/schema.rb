@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140521041521) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "players", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -40,8 +43,9 @@ ActiveRecord::Schema.define(version: 20140521041521) do
   end
 
   create_table "teams", force: true do |t|
-    t.string   "team_name"
-    t.string   "score"
+    t.string   "name"
+    t.integer  "score",      default: 0
+    t.integer  "tier"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
