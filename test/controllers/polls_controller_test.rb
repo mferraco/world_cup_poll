@@ -18,7 +18,7 @@ class PollsControllerTest < ActionController::TestCase
 
   test "should create poll" do
     assert_difference('Poll.count') do
-      post :create, poll: { player1: @poll.player1, player2: @poll.player2, tiebreaker: @poll.tiebreaker, tier1_team1: @poll.tier1_team1, tier1_team2: @poll.tier1_team2, tier2_team1: @poll.tier2_team1, tier2_team2: @poll.tier2_team2, tier3_team1: @poll.tier3_team1, tier3_team2: @poll.tier3_team2, tier4_team1: @poll.tier4_team1, tier4_team2: @poll.tier4_team2, user_id: @poll.user_id }
+      post :create, poll: { name: @poll.name, tiebreaker: @poll.tiebreaker, tier1team1: @poll.tier1team1, tier1team2: @poll.tier1team2, tier2team1: @poll.tier2team1, tier2team1: @poll.tier2team1, tier3team1: @poll.tier3team1, tier3team2: @poll.tier3team2, tier4team1: @poll.tier4team1, tier4team2: @poll.tier4team2, user_id: @poll.user_id }
     end
 
     assert_redirected_to poll_path(assigns(:poll))
@@ -35,7 +35,7 @@ class PollsControllerTest < ActionController::TestCase
   end
 
   test "should update poll" do
-    patch :update, id: @poll, poll: { player1: @poll.player1, player2: @poll.player2, tiebreaker: @poll.tiebreaker, tier1_team1: @poll.tier1_team1, tier1_team2: @poll.tier1_team2, tier2_team1: @poll.tier2_team1, tier2_team2: @poll.tier2_team2, tier3_team1: @poll.tier3_team1, tier3_team2: @poll.tier3_team2, tier4_team1: @poll.tier4_team1, tier4_team2: @poll.tier4_team2, user_id: @poll.user_id }
+    patch :update, id: @poll, poll: { name: @poll.name, tiebreaker: @poll.tiebreaker, tier1team1: @poll.tier1team1, tier1team2: @poll.tier1team2, tier2team1: @poll.tier2team1, tier2team1: @poll.tier2team1, tier3team1: @poll.tier3team1, tier3team2: @poll.tier3team2, tier4team1: @poll.tier4team1, tier4team2: @poll.tier4team2, user_id: @poll.user_id }
     assert_redirected_to poll_path(assigns(:poll))
   end
 

@@ -1,29 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tier1_team1: 1
-  tier1_team2: 1
-  tier2_team1: 1
-  tier2_team2: 1
-  tier3_team1: 1
-  tier3_team2: 1
-  tier4_team1: 1
-  tier4_team2: 1
-  player1: 1
-  player2: 1
-  tiebreaker: 1
   user_id: 1
+  tiebreaker: 1
+  tier1team1: MyString
+  tier1team2: MyString
+  tier2team1: MyString
+  tier2team1: MyString
+  tier3team1: MyString
+  tier3team2: MyString
+  tier4team1: MyString
+  tier4team2: MyString
+  name: MyString
 
 two:
-  tier1_team1: 1
-  tier1_team2: 1
-  tier2_team1: 1
-  tier2_team2: 1
-  tier3_team1: 1
-  tier3_team2: 1
-  tier4_team1: 1
-  tier4_team2: 1
-  player1: 1
-  player2: 1
-  tiebreaker: 1
   user_id: 1
+  tiebreaker: 1
+  tier1team1: MyString
+  tier1team2: MyString
+  tier2team1: MyString
+  tier2team1: MyString
+  tier3team1: MyString
+  tier3team2: MyString
+  tier4team1: MyString
+  tier4team2: MyString
+  name: MyString

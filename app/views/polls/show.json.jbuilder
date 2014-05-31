@@ -1,1 +1,1 @@
-json.extract! @poll, :id, :tier1_team1, :tier1_team2, :tier2_team1, :tier2_team2, :tier3_team1, :tier3_team2, :tier4_team1, :tier4_team2, :player1, :player2, :tiebreaker, :user_id, :created_at, :updated_at
+json.extract! @poll, :id, :user_id, :tiebreaker, :tier1team1, :tier1team2, :tier2team1, :tier2team1, :tier3team1, :tier3team2, :tier4team1, :tier4team2, :name, :created_at, :updated_at

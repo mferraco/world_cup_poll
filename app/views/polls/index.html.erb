@@ -1,49 +1,42 @@
-<h1>Listing polls</h1>
+<div class="container-fluid">
+  <div class="row" style="text-align:center;">
+    <h2>World Cup Poll 2014</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Tier1 team1</th>
-      <th>Tier1 team2</th>
-      <th>Tier2 team1</th>
-      <th>Tier2 team2</th>
-      <th>Tier3 team1</th>
-      <th>Tier3 team2</th>
-      <th>Tier4 team1</th>
-      <th>Tier4 team2</th>
-      <th>Player1</th>
-      <th>Player2</th>
-      <th>Tiebreaker</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <br>
+    <br>
 
-  <tbody>
-    <% @polls.each do |poll| %>
-      <tr>
-        <td><%= poll.tier1_team1 %></td>
-        <td><%= poll.tier1_team2 %></td>
-        <td><%= poll.tier2_team1 %></td>
-        <td><%= poll.tier2_team2 %></td>
-        <td><%= poll.tier3_team1 %></td>
-        <td><%= poll.tier3_team2 %></td>
-        <td><%= poll.tier4_team1 %></td>
-        <td><%= poll.tier4_team2 %></td>
-        <td><%= poll.player1 %></td>
-        <td><%= poll.player2 %></td>
-        <td><%= poll.tiebreaker %></td>
-        <td><%= poll.user_id %></td>
-        <td><%= link_to 'Show', poll %></td>
-        <td><%= link_to 'Edit', edit_poll_path(poll) %></td>
-        <td><%= link_to 'Destroy', poll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <%= link_to new_poll_path do %>
+      <button class="btn btn-info">
+        <span class="larger">Create a Poll</span>
+      </button>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <br>
+    <br>
+    
+  </div>
 
-<%= link_to 'New Poll', new_poll_path %>
+  <div class="row">
+    <div class="col-md-4">&nbsp;</div>
+    <div class="col-md-4">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Poll</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @polls.each do |poll| %>
+            <tr>
+              <td><%= poll.user.name %></td>
+              <td><%= poll.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">&nbsp;</div>
+  </div>
+</div>

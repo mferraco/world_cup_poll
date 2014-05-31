@@ -11,41 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521041521) do
+ActiveRecord::Schema.define(version: 20140531180007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "players", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "goals"
-    t.integer  "assists"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "polls", force: true do |t|
-    t.integer  "tier1_team1"
-    t.integer  "tier1_team2"
-    t.integer  "tier2_team1"
-    t.integer  "tier2_team2"
-    t.integer  "tier3_team1"
-    t.integer  "tier3_team2"
-    t.integer  "tier4_team1"
-    t.integer  "tier4_team2"
-    t.integer  "player1"
-    t.integer  "player2"
-    t.integer  "tiebreaker"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "teams", force: true do |t|
+    t.integer  "tiebreaker"
+    t.string   "tier1team1"
+    t.string   "tier1team2"
+    t.string   "tier2team1"
+    t.string   "tier2team2"
+    t.string   "tier3team1"
+    t.string   "tier3team2"
+    t.string   "tier4team1"
+    t.string   "tier4team2"
     t.string   "name"
-    t.integer  "score",      default: 0
-    t.integer  "tier"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

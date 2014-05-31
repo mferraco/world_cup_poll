@@ -1,5 +1,67 @@
-<h1>New poll</h1>
+<div class="container-fluid">
+  <div class="row" style="text-align: center;">
+    <h2>Create a Poll</h2>
+  </div>
 
-<%= render 'form' %>
+  <%= simple_form_for(@poll) do |f| %>
+    <%= f.error_notification %>
 
-<%= link_to 'Back', polls_path %>
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-2">
+      <p class="larger"><b>Poll Name</b></p>
+      <%= f.input :name, label: false %>
+      <br>
+      <br>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-2">
+      <p class="larger"><b>Tier 1</b></p>
+      <%= f.input :tier1team1, collection: Poll::TIER_1, label: false, :input_html => {:style=> 'width: 150px;'} %>
+      <br>
+      <%= f.input :tier1team2, collection: Poll::TIER_1, label: false, :input_html => {:style=> 'width: 150px;'}  %>  
+    </div>
+    
+    <div class="col-md-2">
+      <p class="larger"><b>Tier 2</b></p>
+      <%= f.input :tier2team1, collection: Poll::TIER_2, label: false, :input_html => {:style=> 'width: 150px;'}  %>
+      <br>
+      <%= f.input :tier2team2, collection: Poll::TIER_2, label: false, :input_html => {:style=> 'width: 150px;'}  %>
+    </div>
+
+    <div class="col-md-2">
+      <p class="larger"><b>Tier 3</b></p>
+      <%= f.input :tier3team1, collection: Poll::TIER_3, label: false, :input_html => {:style=> 'width: 150px;'}  %>
+      <br>
+      <%= f.input :tier3team2, collection: Poll::TIER_3, label: false, :input_html => {:style=> 'width: 150px;'}  %>
+    </div>
+
+    <div class="col-md-2">
+      <p class="larger"><b>Tier 4</b></p>
+      <%= f.input :tier4team1, collection: Poll::TIER_4, label: false, :input_html => {:style=> 'width: 150px;'}  %>
+      <br>
+      <%= f.input :tier4team2, collection: Poll::TIER_4, label: false, :input_html => {:style=> 'width: 150px;'}  %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-2">
+      <br>
+      <br>
+      <p class="larger"><b>Tiebreaker</b></p>
+        <%= f.input :tiebreaker, label: false, hint: "Total goals scored by championship team throughout the tournament." %>
+      <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+    </div>
+  </div>
+
+  <div class="row" style="text-align: center;">
+    <%= f.button :submit %>
+  </div>
+    
+  
+<% end %>
+</div>

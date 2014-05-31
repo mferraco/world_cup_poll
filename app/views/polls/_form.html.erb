@@ -1,65 +1,21 @@
-<%= form_for(@poll) do |f| %>
-  <% if @poll.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@poll.errors.count, "error") %> prohibited this poll from being saved:</h2>
+<%= simple_form_for(@poll) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @poll.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :tiebreaker %>
+    <%= f.input :tier1team1, collection: Poll::TIER_1, label: false %>
+    <%= f.input :tier1team2, collection: Poll::TIER_1, label: false %>
+    <%= f.input :tier2team1, collection: Poll::TIER_2, label: false %>
+    <%= f.input :tier2team1, collection: Poll::TIER_2, label: false %>
+    <%= f.input :tier3team1, collection: Poll::TIER_3, label: false %>
+    <%= f.input :tier3team2, collection: Poll::TIER_3, label: false %>
+    <%= f.input :tier4team1, collection: Poll::TIER_4, label: false %>
+    <%= f.input :tier4team2, collection: Poll::TIER_4, label: false %>
+    <%= f.input :name %>
+  </div>
 
-  <div class="field">
-    <%= f.label :tier1_team1 %><br>
-    <%= f.number_field :tier1_team1 %>
-  </div>
-  <div class="field">
-    <%= f.label :tier1_team2 %><br>
-    <%= f.number_field :tier1_team2 %>
-  </div>
-  <div class="field">
-    <%= f.label :tier2_team1 %><br>
-    <%= f.number_field :tier2_team1 %>
-  </div>
-  <div class="field">
-    <%= f.label :tier2_team2 %><br>
-    <%= f.number_field :tier2_team2 %>
-  </div>
-  <div class="field">
-    <%= f.label :tier3_team1 %><br>
-    <%= f.number_field :tier3_team1 %>
-  </div>
-  <div class="field">
-    <%= f.label :tier3_team2 %><br>
-    <%= f.number_field :tier3_team2 %>
-  </div>
-  <div class="field">
-    <%= f.label :tier4_team1 %><br>
-    <%= f.number_field :tier4_team1 %>
-  </div>
-  <div class="field">
-    <%= f.label :tier4_team2 %><br>
-    <%= f.number_field :tier4_team2 %>
-  </div>
-  <div class="field">
-    <%= f.label :player1 %><br>
-    <%= f.number_field :player1 %>
-  </div>
-  <div class="field">
-    <%= f.label :player2 %><br>
-    <%= f.number_field :player2 %>
-  </div>
-  <div class="field">
-    <%= f.label :tiebreaker %><br>
-    <%= f.number_field :tiebreaker %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>
