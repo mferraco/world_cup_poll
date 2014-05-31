@@ -32,3 +32,5 @@ production:
   database: worldcup_prod
   pool: 5
   timeout: 5000
+  username: worldcup
+  password: Brazil2014
