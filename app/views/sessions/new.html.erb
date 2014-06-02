@@ -12,9 +12,9 @@
 
   <div class="row">
     
-    <div class="col-md-5">&nbsp;</div>
+    <div class="col-md-4">&nbsp;</div>
     
-    <div class="col-md-3">
+    <div class="col-md-2">
       <%= form_tag sessions_path, :method => :post do %>
           <p class="larger"><b>Email</b></p>
           <%= text_field_tag :email %>
@@ -25,16 +25,32 @@
           <br>
           <br>
           <%= submit_tag "Login", :class => 'btn btn-info'%>
-          <%= link_to "Login with Google", login_google_path %>
           <br>
           <br>
           <br>
           <%= link_to new_user_path do %>
             <button class="btn btn-success">
-              <span class="larger">Sign Up!</span>
+              <span class="larger">Sign Up</span>
             </button>
           <% end %>
       <% end %>
+    </div>
+
+    <div class="col-md-1">
+      <h3>OR</h3>
+    </div>
+
+    <div class="col-md-3">
+      <h3>Login With</h3>
+      <br>
+      <%= link_to login_google_path do %>
+        <button class="btn btn-danger">
+          <span class="larger">Google</span>
+        </button>
+      <% end %>
+      <br>
+      <br>
+      <p>No need to sign up if choosing this option.</p>
     </div>
 
   </div>

@@ -39,7 +39,11 @@
           <% @polls.each do |poll| %>
             <tr class="center">
               <td><%= poll.user.name %></td>
-              <td class="hover"><%= link_to poll.name, poll %></td>
+              <% if can? :read, poll %>
+                <td class="hover"><%= link_to poll.name, poll %></td>
+              <% else %>
+                <td><%= poll.name %></td>
+              <% end %>
               <td><%= poll.score %></td>
               <td><%= poll.player1_score %></td>
               <td><%= poll.player2_score %></td>

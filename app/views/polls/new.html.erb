@@ -53,9 +53,11 @@
       <br>
       <br>
       <p class="larger"><b>Players</b></p>
-      <%= f.input :player1, label: false, :input_html => {:style=> 'width: 150px;'} %>
+      1. <%= f.input :player1, label: false, :input_html => {:style=> 'width: 150px;'} %>
       <br>
-      <%= f.input :player2, label: false, :input_html => {:style=> 'width: 150px;'} %>
+      2. <%= f.input :player2, label: false, :input_html => {:style=> 'width: 150px;'} %>
+      <br>
+      <p>Enter the full name of the players you choose.</p>
     </div>
   </div>
 
@@ -72,6 +74,8 @@
 
   <div class="row" style="text-align: center;">
     <%= f.button :submit %>
+    <br>
+    <br>
   </div>
     
   

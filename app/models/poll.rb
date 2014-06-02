@@ -2,7 +2,7 @@ class Poll < ActiveRecord::Base
 
   belongs_to :user
 
-  TIER_1 = ["Spain (1)", "Germany (2)", "Argentina (3)", "Colombia (4)", "Belgium (5)", "Uruguay (6)", "Switzerland (7)","Brazil (11)"]
+  TIER_1 = ["Brazil (11 - host)", "Spain (1)", "Germany (2)", "Argentina (3)", "Colombia (4)", "Belgium (5)", "Uruguay (6)", "Switzerland (7)"]
   TIER_2 = ["Netherlands (8)", "Italy (9)", "England (10)", "Chile (12)", "United States (13)", "Portugal (14)", "Greece (15)", "Bosnia & Herzegovina (16)"]
   TIER_3 = ["Ivory Coast (17)", "Croatia (18)", "Russia (19)", "France (21)", "Ecuador (22)", "Ghana (23)", "Mexico (24)", "Costa Rica (31)"]
   TIER_4 = ["Algeria (32)", "Nigeria (33)", "Honduras (34)", "Japan (44)", "Iran (49)", "South Korea (56)", "Australia (57)", "Cameroon (59)"]

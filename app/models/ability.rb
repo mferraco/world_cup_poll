@@ -8,7 +8,9 @@ class Ability
     if user.role == "Admin"
         can :manage, :all
     else
-        can :read, Poll
+        can :read, Poll do |poll|
+            user.polls.include?(poll)
+        end
         
         can :update, Poll do |poll|
             user.polls.include?(poll)
