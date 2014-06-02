@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<% if signed_in? %>
+  <%= render :partial => "partials/navbar" %>
+<% end %>
+
+<% if alert != nil %>
+  <div class="alert alert-yield">
+    <%= alert %>
+  </div>
+<% end %>
+
 <%= yield %>
 
 </body>

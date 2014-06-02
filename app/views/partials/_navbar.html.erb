@@ -1,0 +1,33 @@
+<!-- This is the header partial.  It appears on every page. -->
+
+<!-- build the navbar for the top of the page -->
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="divider-vertical"></li>
+      
+      <li>
+        <%= link_to(polls_path) do %>
+          <span class="larger">Scoreboard</span>
+        <% end %>
+      </li>
+      <li class="divider-vertical"></li>
+      <li>
+        <%= link_to("/poll_list") do %>
+          <span class="larger">Your Polls</span>
+        <% end %>
+      </li>
+      <li class="divider-vertical"></li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="divider-vertical"></li>
+      <li>
+        <%= link_to(logout_path) do %>
+          <span class="larger">Logout</span>
+        <% end %>
+      </li>
+      <li class="divider-vertical"></li>
+    </ul>
+  </div>
+</nav>

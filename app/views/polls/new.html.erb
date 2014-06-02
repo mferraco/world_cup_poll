@@ -52,8 +52,20 @@
     <div class="col-md-2">
       <br>
       <br>
+      <p class="larger"><b>Players</b></p>
+      <%= f.input :player1, label: false, :input_html => {:style=> 'width: 150px;'} %>
+      <br>
+      <%= f.input :player2, label: false, :input_html => {:style=> 'width: 150px;'} %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-2">
+      <br>
+      <br>
       <p class="larger"><b>Tiebreaker</b></p>
-        <%= f.input :tiebreaker, label: false, hint: "Total goals scored by championship team throughout the tournament." %>
+      <%= f.input :tiebreaker, label: false, hint: "Total goals scored by championship team throughout the tournament." %>
       <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
     </div>
   </div>

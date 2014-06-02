@@ -1,10 +1,17 @@
 class PollsController < ApplicationController
   before_action :set_poll, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_signed_in
+
+  load_and_authorize_resource
 
   # GET /polls
   # GET /polls.json
   def index
-    @polls = Poll.all
+    @polls = Poll.by_score.by_user
+  end
+
+  def poll_list
+    @polls = Poll.for_user(current_user.id)
   end
 
   # GET /polls/1
@@ -69,6 +76,6 @@ class PollsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poll_params
-      params.require(:poll).permit(:user_id, :tiebreaker, :tier1team1, :tier1team2, :tier2team1, :tier2team2, :tier3team1, :tier3team2, :tier4team1, :tier4team2, :name)
+      params.require(:poll).permit(:user_id, :tiebreaker, :tier1team1, :tier1team2, :tier2team1, :tier2team2, :tier3team1, :tier3team2, :tier4team1, :tier4team2, :player1, :player2, :score, :name)
     end
 end

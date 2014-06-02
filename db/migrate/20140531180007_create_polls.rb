@@ -11,7 +11,10 @@ class CreatePolls < ActiveRecord::Migration
       t.string :tier3team2
       t.string :tier4team1
       t.string :tier4team2
+      t.string :player1
+      t.string :player2
       t.string :name
+      t.integer :score, default: 0
 
       t.timestamps
     end

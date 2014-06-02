@@ -1,59 +1,73 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-2">
+      <h2><%= @poll.name %></h2>
+      <br>
+      <br>
+    </div>
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @poll.user_id %>
-</p>
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-2">
+      <p class="larger"><b><u>Tier 1</u></b></p>
+      <br>
+      <%= @poll.tier1team1 %>
+      <br>
+      <%= @poll.tier1team2 %>
 
-<p>
-  <strong>Tiebreaker:</strong>
-  <%= @poll.tiebreaker %>
-</p>
+      <br>
+      <br>
+      <br>
 
-<p>
-  <strong>Tier1team1:</strong>
-  <%= @poll.tier1team1 %>
-</p>
+      <p class="larger"><b><u>Tier 3</u></b></p>
+      <br>
+      <%= @poll.tier3team1 %>
+      <br>
+      <%= @poll.tier3team2 %>
+    </div>
 
-<p>
-  <strong>Tier1team2:</strong>
-  <%= @poll.tier1team2 %>
-</p>
+    <div class="col-md-2">
+      <p class="larger"><b><u>Tier 2</u></b></p>
+      <br>
+      <%= @poll.tier2team1 %>
+      <br>
+      <%= @poll.tier2team2 %>
+      
+      <br>
+      <br>
+      <br>
 
-<p>
-  <strong>Tier2team1:</strong>
-  <%= @poll.tier2team1 %>
-</p>
+      <p class="larger"><b><u>Tier 4</u></b></p>
+      <br>
+      <%= @poll.tier4team1 %>
+      <br>
+      <%= @poll.tier4team2 %>
+    </div>
 
-<p>
-  <strong>Tier2team1:</strong>
-  <%= @poll.tier2team1 %>
-</p>
+    <div class="col-md-4">
+      <p class="larger"><b><u>Players</u></b></p>
+      <br>
+      <%= @poll.player1 %>
+      <br>
+      <%= @poll.player2 %>
+    </div>
+  </div>
 
-<p>
-  <strong>Tier3team1:</strong>
-  <%= @poll.tier3team1 %>
-</p>
-
-<p>
-  <strong>Tier3team2:</strong>
-  <%= @poll.tier3team2 %>
-</p>
-
-<p>
-  <strong>Tier4team1:</strong>
-  <%= @poll.tier4team1 %>
-</p>
-
-<p>
-  <strong>Tier4team2:</strong>
-  <%= @poll.tier4team2 %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @poll.name %>
-</p>
-
-<%= link_to 'Edit', edit_poll_path(@poll) %> |
-<%= link_to 'Back', polls_path %>
+  <% if can? :edit, @poll %>
+    <div class="row">
+      <div class="col-md-2">&nbsp;</div>
+      <div class="col-md-2">
+        <br>
+        <br>
+        <br>
+        <%= link_to edit_poll_path(@poll) do %>
+          <button class="btn btn-info">
+            <span class="larger">Edit this Poll</span>
+          </button>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

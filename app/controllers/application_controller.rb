@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
   CLIENT_SCOPE = 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email'
 
   BASEURL = APP_CONFIG['server_name']
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to main_app.root_url, :alert => "You are not authorized to view this page."
+  end
 end

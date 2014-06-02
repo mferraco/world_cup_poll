@@ -36,6 +36,8 @@ gem 'nested_form'
 
 gem 'capistrano', '~> 3.2.1'
 
+gem 'cancancan', '~> 1.8'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

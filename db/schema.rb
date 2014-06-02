@@ -27,7 +27,10 @@ ActiveRecord::Schema.define(version: 20140531180007) do
     t.string   "tier3team2"
     t.string   "tier4team1"
     t.string   "tier4team2"
+    t.string   "player1"
+    t.string   "player2"
     t.string   "name"
+    t.integer  "score",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

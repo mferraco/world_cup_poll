@@ -8,6 +8,7 @@ WorldCupPoll::Application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
   root 'polls#index'
+  get '/poll_list', to: 'polls#poll_list', as: 'poll_list'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

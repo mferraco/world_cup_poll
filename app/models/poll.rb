@@ -41,5 +41,11 @@ class Poll < ActiveRecord::Base
       errors.add(:tier4team1, "Tier 4 teams can't be the same." ) if tier4team1 == tier4team2
   end
 
+  # SCOPES
+
+  scope :by_score, -> { order('score') }
+  scope :by_user, -> { joins(:user).order('last_name, first_name, name') }
+  scope :for_user, ->(user_id) { where("user_id = ?", user_id) }
+
 
 end
