@@ -2,10 +2,14 @@ WorldCupPoll::Application.routes.draw do
   resources :polls
 
   resources :users
+  resources :sessions
 
-  get '/login', to: 'sessions#new', as: 'login'
-  get '/oauth2callback', to: 'sessions#create'
+  get '/login_google', to: 'sessions#new_google', as: 'login_google'
+  get '/oauth2callback', to: 'sessions#create_google'
+  
   get '/logout', to: 'sessions#destroy', as: 'logout'
+
+  get '/login', to: 'sessions#new', as:'login'
 
   root 'polls#index'
   get '/poll_list', to: 'polls#poll_list', as: 'poll_list'

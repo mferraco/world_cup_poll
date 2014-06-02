@@ -1,0 +1,32 @@
+<%= simple_form_for(@user) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="field">
+       <%= f.label :first_name %><br />
+       <%= f.input :first_name %>
+    </div>
+
+    <div class="field">
+       <%= f.label :last_name %><br />
+       <%= f.input :last_name %>
+    </div>
+
+    <div class="field">
+       <%= f.label :email %><br />
+       <%= f.input :email %>
+    </div>
+
+    <div class="field">
+       <%= f.label :password %><br />
+       <%= f.password_field :password %>
+    </div>
+    <div class="field">
+       <%= f.label :password_confirmation %><br />
+       <%= f.password_field :password_confirmation %>
+    </div>
+
+
+    <%= f.input :role, as: :hidden, input_html: { value: "User" } %>
+
+    <%= f.submit %>
+<% end %>

@@ -1,5 +1,48 @@
-<h1>New user</h1>
+<div class="container-fluid">
 
-<%= render 'form' %>
+<div class="row">
+  <div class="col-md-3">&nbsp;</div>
+  <div class="col-md-5">
+    <br>
+    <br>
+    <h2>Create an Account</h2>
+    <br>
+    <br>
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.error_notification %>
 
-<%= link_to 'Back', users_path %>
+      <div class="field">
+         <p class="larger"><b>First Name</b></p>
+         <%= f.input :first_name, label: false %>
+      </div>
+
+      <div class="field">
+         <p class="larger"><b>Last Name</b></p>
+         <%= f.input :last_name, label: false %>
+      </div>
+
+      <div class="field">
+         <p class="larger"><b>Email</b></p>
+         <%= f.input :email, label: false %>
+      </div>
+
+      <div class="field">
+         <p class="larger"><b>Password</b></p>
+         <%= f.input :password, label: false %>
+      </div>
+      <div class="field">
+         <p class="larger"><b>Retype Password</b></p>
+         <%= f.input :password_confirmation, label: false %>
+      </div>
+
+
+      <%= f.input :role, as: :hidden, input_html: { value: "User" } %>
+      <%= f.input :login_type, as: :hidden, input_html: { value: "generic" } %>
+
+      <br>
+      <%= f.submit "Sign Up", :class => 'btn btn-info' %>
+  <% end %>
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  
+  <br>
+  <br>
+  <br>
+
+  <div class="row" style="text-align:center;">
+    <h1>WORLD CUP CHALLENGE - Brazil 2014</h1>
+    <br>
+    <br>
+  </div>
+
+  <div class="row">
+    
+    <div class="col-md-5">&nbsp;</div>
+    
+    <div class="col-md-3">
+      <%= form_tag sessions_path, :method => :post do %>
+          <p class="larger"><b>Email</b></p>
+          <%= text_field_tag :email %>
+          <br>
+          <br>
+          <p class="larger"><b>Password</b></p>
+          <%= password_field_tag :password %>
+          <br>
+          <br>
+          <%= submit_tag "Login", :class => 'btn btn-info'%>
+          <%= link_to "Login with Google", login_google_path %>
+          <br>
+          <br>
+          <br>
+          <%= link_to new_user_path do %>
+            <button class="btn btn-success">
+              <span class="larger">Sign Up!</span>
+            </button>
+          <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

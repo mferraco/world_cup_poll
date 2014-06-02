@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :refresh_token
       t.string :access_token
       t.string :expires
+      t.string :login_type
 
       t.timestamps
     end
