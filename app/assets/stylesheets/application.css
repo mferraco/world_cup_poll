@@ -24,3 +24,11 @@
   border-right: 1px solid #ffffff;
   border-left: 1px solid #f2f2f2;
 }
+
+.center th, tr {
+  text-align: center;
+}
+
+.hover:hover {
+  text-decoration: underline;
+}

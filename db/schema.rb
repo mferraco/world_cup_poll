@@ -30,7 +30,14 @@ ActiveRecord::Schema.define(version: 20140602030521) do
     t.string   "player1"
     t.string   "player2"
     t.string   "name"
-    t.integer  "score",      default: 0
+    t.integer  "player1_score",      default: 0
+    t.integer  "player2_score",      default: 0
+    t.integer  "group_score",        default: 0
+    t.integer  "advance_from_group", default: 0
+    t.integer  "quarterfinal_score", default: 0
+    t.integer  "semifinal_score",    default: 0
+    t.integer  "championship_score", default: 0
+    t.integer  "score",              default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

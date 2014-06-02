@@ -21,23 +21,33 @@
     <div class="col-md-10">
       <table class="table table-striped">
         <thead>
-          <tr>
+          <tr class="center">
             <th>Name</th>
             <th>Poll</th>
-            <th>Group Stage Score</th>
-            <th>Advance From Group</th>
-            <th>Quarterfinal Score</th>
-            <th>Semifinal Score</th>
-            <th>Championship Score</th>
+            <th>Total</th>
+            <th>Player 1</th>
+            <th>Player 2</th>
+            <th>Group</th>
+            <th>Advance</th>
+            <th>Quarterfinal</th>
+            <th>Semifinal</th>
+            <th>Final</th>
           </tr>
         </thead>
 
         <tbody>
           <% @polls.each do |poll| %>
-            <tr>
+            <tr class="center">
               <td><%= poll.user.name %></td>
-              <td><%= link_to poll.name, poll %></td>
+              <td class="hover"><%= link_to poll.name, poll %></td>
               <td><%= poll.score %></td>
+              <td><%= poll.player1_score %></td>
+              <td><%= poll.player2_score %></td>
+              <td><%= poll.group_score %></td>
+              <td><%= poll.advance_from_group %></td>
+              <td><%= poll.quarterfinal_score %></td>
+              <td><%= poll.semifinal_score %></td>
+              <td><%= poll.championship_score %></td>
             </tr>
           <% end %>
         </tbody>
