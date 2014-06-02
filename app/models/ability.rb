@@ -18,6 +18,7 @@ class Ability
             user.polls.include?(poll)
         end
 
+        can :pdf, Poll
         can :poll_list, Poll
         can :create, Poll
     end

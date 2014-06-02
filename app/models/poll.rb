@@ -7,7 +7,7 @@ class Poll < ActiveRecord::Base
   TIER_3 = ["Ivory Coast (17)", "Croatia (18)", "Russia (19)", "France (21)", "Ecuador (22)", "Ghana (23)", "Mexico (24)", "Costa Rica (31)"]
   TIER_4 = ["Algeria (32)", "Nigeria (33)", "Honduras (34)", "Japan (44)", "Iran (49)", "South Korea (56)", "Australia (57)", "Cameroon (59)"]
 
-  validates_presence_of :user_id, :tiebreaker, :tier1team1, :tier1team2, :tier2team1, :tier2team2, :tier3team1, :tier3team2, :tier4team1, :tier4team2, :name
+  validates_presence_of :user_id, :tiebreaker, :tier1team1, :tier1team2, :tier2team1, :tier2team2, :tier3team1, :tier3team2, :tier4team1, :tier4team2, :player1, :player2, :name
   validates :tier1team1, inclusion: TIER_1
   validates :tier1team2, inclusion: TIER_1
   validates :tier2team1, inclusion: TIER_2

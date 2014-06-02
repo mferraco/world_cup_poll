@@ -14,6 +14,8 @@ WorldCupPoll::Application.routes.draw do
   root 'polls#index'
   get '/poll_list', to: 'polls#poll_list', as: 'poll_list'
 
+  get '/rules', to: 'polls#pdf', as: 'pdf'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

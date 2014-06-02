@@ -14,6 +14,11 @@ class PollsController < ApplicationController
     @polls = Poll.for_user(current_user.id)
   end
 
+  def pdf
+    pdf_filename = File.join(Rails.root, "public/worldcupchallenge.pdf")
+    send_file(pdf_filename, :filename => "worldcupchallenge.pdf", :disposition => 'inline', :type => "application/pdf")
+  end
+
   # GET /polls/1
   # GET /polls/1.json
   def show
