@@ -43,6 +43,12 @@ class Poll < ActiveRecord::Base
       errors.add(:tier4team1, "Tier 4 teams can't be the same." ) if tier4team1 == tier4team2
   end
 
+  validate :check_players
+
+  def check_players
+      errors.add(:player1, "Players can't be the same." ) if player1 == player2
+  end
+
   # SCOPES
 
   scope :by_score, -> { order('score DESC') }

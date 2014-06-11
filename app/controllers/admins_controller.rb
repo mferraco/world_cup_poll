@@ -20,15 +20,37 @@ class AdminsController < ApplicationController
       # - championship_score - 40
 
     team = params["team"]
+    player = params["player"]
 
     Poll.all.each do |p|
-      if p.tier1team1.include?(team) or p.tier1team2.include?(team) or p.tier2team1.include?(team) or p.tier2team2.include?(team) or p.tier3team1.include?(team) or p.tier3team2.include?(team) or p.tier4team1.include?(team) or p.tier4team2.include?(team)
-        score = p.attributes[params["round"]]
-        score = score + params["score"].to_i
+      if !team.blank? and !team.nil?
+        if p.tier1team1.include?(team) or p.tier1team2.include?(team) or p.tier2team1.include?(team) or p.tier2team2.include?(team) or p.tier3team1.include?(team) or p.tier3team2.include?(team) or p.tier4team1.include?(team) or p.tier4team2.include?(team)
+          score = p.attributes[params["round"]]
+          score = score + params["score"].to_i
 
-        p.update_column(params["round"].to_sym, score)
-        p.save
+          p.update_column(params["round"].to_sym, score)
+          p.save
+        end
       end
+
+      if !player.blank? and !player.nil?
+        if p.player1 == player
+          pscore = p.attributes["player1_score"]
+          pscore = pscore + params["score"].to_i
+
+          p.update_column(:player1_score, pscore)
+          p.save
+        end
+
+        if p.player2 == player
+          pscore = p.attributes["player2_score"]
+          pscore = pscore + params["score"].to_i
+
+          p.update_column(:player2_score, pscore)
+          p.save
+        end
+      end
+
     end
 
     # check if the team has that team name
