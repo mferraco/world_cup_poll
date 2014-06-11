@@ -19,6 +19,9 @@ WorldCupPoll::Application.routes.draw do
   get '/admin_page', to: 'admins#admin_page', as: 'admin_page'
   post '/add_score', to: 'admins#add_score', as: 'add_score'
 
+  get '/admin_page_subtract', to: 'admins#admin_page_subtract', as: 'admin_page_subtract'
+  post '/subtract_score', to: 'admins#subtract_score', as: 'subtract_score'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

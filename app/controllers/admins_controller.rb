@@ -9,6 +9,12 @@ class AdminsController < ApplicationController
     end
   end
 
+  def admin_page_subtract
+    respond_to do |format|
+      format.html { render "admin_page_subtract" }
+    end
+  end
+
   def add_score
 
     # KEYWORDS:
@@ -45,6 +51,48 @@ class AdminsController < ApplicationController
         if p.player2 == player
           pscore = p.attributes["player2_score"]
           pscore = pscore + params["score"].to_i
+
+          p.update_column(:player2_score, pscore)
+          p.save
+        end
+      end
+
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to "/admin_page" }
+    end
+  end
+
+
+  def subtract_score
+
+    team = params["team"]
+    player = params["player"]
+
+    Poll.all.each do |p|
+      if !team.blank? and !team.nil?
+        if p.tier1team1.include?(team) or p.tier1team2.include?(team) or p.tier2team1.include?(team) or p.tier2team2.include?(team) or p.tier3team1.include?(team) or p.tier3team2.include?(team) or p.tier4team1.include?(team) or p.tier4team2.include?(team)
+          score = p.attributes[params["round"]]
+          score = score - params["score"].to_i
+
+          p.update_column(params["round"].to_sym, score)
+          p.save
+        end
+      end
+
+      if !player.blank? and !player.nil?
+        if p.player1 == player
+          pscore = p.attributes["player1_score"]
+          pscore = pscore - params["score"].to_i
+
+          p.update_column(:player1_score, pscore)
+          p.save
+        end
+
+        if p.player2 == player
+          pscore = p.attributes["player2_score"]
+          pscore = pscore - params["score"].to_i
 
           p.update_column(:player2_score, pscore)
           p.save
