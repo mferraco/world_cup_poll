@@ -16,6 +16,9 @@ class Ability
             user.polls.include?(poll)
         end
 
+        cannot :add_score, Admin
+        cannot :admin_page, Admin
+
         can :edit, Poll do |poll|
             user.polls.include?(poll)
         end

@@ -16,6 +16,9 @@ WorldCupPoll::Application.routes.draw do
 
   get '/rules', to: 'polls#pdf', as: 'pdf'
 
+  get '/admin_page', to: 'admins#admin_page', as: 'admin_page'
+  post '/add_score', to: 'admins#add_score', as: 'add_score'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

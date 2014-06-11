@@ -2,6 +2,8 @@ class Poll < ActiveRecord::Base
 
   belongs_to :user
 
+  after_save :update_total
+
   TIER_1 = ["Brazil (11 - host)", "Spain (1)", "Germany (2)", "Argentina (3)", "Colombia (4)", "Belgium (5)", "Uruguay (6)", "Switzerland (7)"]
   TIER_2 = ["Netherlands (8)", "Italy (9)", "England (10)", "Chile (12)", "United States (13)", "Portugal (14)", "Greece (15)", "Bosnia & Herzegovina (16)"]
   TIER_3 = ["Ivory Coast (17)", "Croatia (18)", "Russia (19)", "France (21)", "Ecuador (22)", "Ghana (23)", "Mexico (24)", "Costa Rica (31)"]
@@ -43,9 +45,14 @@ class Poll < ActiveRecord::Base
 
   # SCOPES
 
-  scope :by_score, -> { order('score') }
+  scope :by_score, -> { order('score DESC') }
   scope :by_user, -> { joins(:user).order('last_name, first_name, name') }
   scope :for_user, ->(user_id) { where("user_id = ?", user_id) }
 
+
+  def update_total
+    total_score = self.group_score + self.advance_from_group + self.round_of_sixteen + self.quarterfinal_score + self.semifinal_score + self.championship_score + self.player1_score + self.player2_score
+    self.update_column(:score, total_score)
+  end
 
 end

@@ -24,7 +24,14 @@
         <% end %>
       </li>
       <li class="divider-vertical"></li>
-      
+      <% if current_user.role == "Admin" %>
+        <li>
+          <%= link_to("/admin_page") do %>
+            <span class="larger">Admin</span>
+          <% end %>
+        </li>
+        <li class="divider-vertical"></li>
+      <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="divider-vertical"></li>
