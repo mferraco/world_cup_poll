@@ -10,9 +10,9 @@
   <div class="row">
     <div class="col-md-1">&nbsp;</div>
     <div class="col-md-10">
-      <table class="table table-striped">
+      <table class="table">
         <thead>
-          <tr class="center">
+          <tr class="center" style="background-color: #EE6363">
             <th></th>
             <th>Name</th>
             <th>Poll</th>
@@ -20,11 +20,12 @@
             <th>Player 1</th>
             <th>Player 2</th>
             <th>Group</th>
+            <!--
             <th>Advance</th>
             <th>Round of 16</th>
             <th>Quarterfinal</th>
             <th>Semifinal</th>
-            <th>Final</th>
+            <th>Final</th>-->
           </tr>
         </thead>
 
@@ -34,7 +35,11 @@
             <% count = count + 1 %>
             <tr class="center">
               <td style="text-align:right;"><%= count %>.</td>
-              <td><%= poll.user.name %></td>
+              <% if current_user.name == poll.user.name %>
+                <td class="larger" style="color:red"><%= poll.user.name %></td>
+              <% else %>
+                <td style="font-size: 15px;"><%= poll.user.name %></td>
+              <% end %>
               <% if can? :read, poll %>
                 <td class="hover"><%= link_to poll.name, poll %></td>
               <% else %>
@@ -44,11 +49,12 @@
               <td><%= poll.player1_score %></td>
               <td><%= poll.player2_score %></td>
               <td><%= poll.group_score %></td>
+              <!--
               <td><%= poll.advance_from_group %></td>
               <td><%= poll.round_of_sixteen %></td>
               <td><%= poll.quarterfinal_score %></td>
               <td><%= poll.semifinal_score %></td>
-              <td><%= poll.championship_score %></td>
+              <td><%= poll.championship_score %></td>-->
             </tr>
           <% end %>
         </tbody>

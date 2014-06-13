@@ -32,3 +32,11 @@
 .hover:hover {
   text-decoration: underline;
 }
+
+tr:nth-child(even) {
+    background-color: #FFF68F;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
