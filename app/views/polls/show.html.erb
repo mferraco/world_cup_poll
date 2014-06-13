@@ -16,16 +16,7 @@
       <%= @poll.tier1team1 %>
       <br>
       <%= @poll.tier1team2 %>
-
-      <br>
-      <br>
-      <br>
-
-      <p class="larger"><b><u>Tier 3</u></b></p>
-      <br>
-      <%= @poll.tier3team1 %>
-      <br>
-      <%= @poll.tier3team2 %>
+      <br><br><br>
     </div>
 
     <div class="col-md-2">
@@ -34,16 +25,28 @@
       <%= @poll.tier2team1 %>
       <br>
       <%= @poll.tier2team2 %>
-      
-      <br>
-      <br>
-      <br>
+      <br><br><br>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-2">
+      <p class="larger"><b><u>Tier 3</u></b></p>
+      <br>
+      <%= @poll.tier3team1 %>
+      <br>
+      <%= @poll.tier3team2 %>
+      <br><br><br>
+    </div>
+
+    <div class="col-md-2">
       <p class="larger"><b><u>Tier 4</u></b></p>
       <br>
       <%= @poll.tier4team1 %>
       <br>
       <%= @poll.tier4team2 %>
+      <br><br><br>
     </div>
 
     <div class="col-md-4">
@@ -59,7 +62,6 @@
     <div class="row">
       <div class="col-md-2">&nbsp;</div>
       <div class="col-md-2">
-        <br>
         <br>
         <br>
         <%= link_to edit_poll_path(@poll) do %>
