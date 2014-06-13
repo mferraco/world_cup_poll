@@ -31,8 +31,14 @@
 
         <tbody>
           <% count = 0 %>
+          <% prevScore = -1 %>
           <% @polls.each do |poll| %>
-            <% count = count + 1 %>
+
+            <% if prevScore != poll.score %>
+              <% count = count + 1 %>
+              <% prevScore = poll.score %>
+            <% end %>
+
             <tr class="center">
               <td style="text-align:right;"><%= count %>.</td>
                 
