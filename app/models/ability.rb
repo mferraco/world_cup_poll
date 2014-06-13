@@ -8,9 +8,7 @@ class Ability
     if user.role == "Admin"
         can :manage, :all
     else
-        can :read, Poll do |poll|
-            user.polls.include?(poll)
-        end
+        can :read, Poll
         
         can :update, Poll do |poll|
             user.polls.include?(poll)
@@ -18,10 +16,6 @@ class Ability
 
         cannot :add_score, Admin
         cannot :admin_page, Admin
-
-        can :edit, Poll do |poll|
-            user.polls.include?(poll)
-        end
 
         can :pdf, Poll
         can :poll_list, Poll
