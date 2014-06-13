@@ -15,7 +15,6 @@ class Ability
 
         can :pdf, Poll
         can :poll_list, Poll
-        can :create, Poll
     end
     
     # The first argument to `can` is the action you are giving the user
