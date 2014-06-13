@@ -35,17 +35,24 @@
             <% count = count + 1 %>
             <tr class="center">
               <td style="text-align:right;"><%= count %>.</td>
+                
               <% if current_user.name == poll.user.name %>
                 <td class="larger" style="color:red"><%= poll.user.name %></td>
               <% else %>
-                <td style="font-size: 15px;"><%= poll.user.name %></td>
+                <td class="bigger"><%= poll.user.name %></td>
               <% end %>
-              <% if can? :read, poll %>
-                <td class="hover"><%= link_to poll.name, poll %></td>
+            
+              <% if current_user.name == poll.user.name %>
+                <td class="hover larger"><%= link_to poll.name, poll, :class => "red-color" %></td>
               <% else %>
-                <td><%= poll.name %></td>
+                <td class="hover bigger"><%= link_to poll.name, poll %></td>
               <% end %>
-              <td><%= poll.score %></td>
+
+              <% if current_user.name == poll.user.name %>
+                <td class="larger" style="color: red;"><b><%= poll.score %></b></td>
+              <% else %>
+                <td class="bigger"><b><%= poll.score %></b></td>
+              <% end %>
               <td><%= poll.player1_score %></td>
               <td><%= poll.player2_score %></td>
               <td><%= poll.group_score %></td>

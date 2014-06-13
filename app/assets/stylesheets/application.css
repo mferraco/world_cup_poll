@@ -33,10 +33,18 @@
   text-decoration: underline;
 }
 
+.red-color {
+  color: red;
+}
+
 tr:nth-child(even) {
     background-color: #FFF68F;
 }
 
 tr:nth-child(odd) {
     background-color: #fff;
+}
+
+.bigger {
+  font-size: 15px;
 }
