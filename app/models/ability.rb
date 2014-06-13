@@ -9,10 +9,6 @@ class Ability
         can :manage, :all
     else
         can :read, Poll
-        
-        can :update, Poll do |poll|
-            user.polls.include?(poll)
-        end
 
         cannot :add_score, Admin
         cannot :admin_page, Admin
