@@ -64,6 +64,10 @@
       <div class="col-md-2">
         <br>
         <br>
+        <p class="larger">Paid?</p>
+        <%= @poll.paid %>
+        <br>
+        <br>
         <%= link_to edit_poll_path(@poll) do %>
           <button class="btn btn-info">
             <span class="larger">Edit this Poll</span>

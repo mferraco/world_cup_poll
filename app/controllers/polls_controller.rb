@@ -81,6 +81,6 @@ class PollsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poll_params
-      params.require(:poll).permit(:user_id, :tiebreaker, :tier1team1, :tier1team2, :tier2team1, :tier2team2, :tier3team1, :tier3team2, :tier4team1, :tier4team2, :player1, :player2, :score, :name)
+      params.require(:poll).permit(:user_id, :tiebreaker, :tier1team1, :tier1team2, :tier2team1, :tier2team2, :tier3team1, :tier3team2, :tier4team1, :tier4team2, :player1, :player2, :score, :name, :paid)
     end
 end
