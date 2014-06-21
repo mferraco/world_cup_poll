@@ -40,7 +40,7 @@ class AdminsController < ApplicationController
       end
 
       if !player.blank? and !player.nil?
-        if p.player1.inclue?(player)
+        if p.player1.include?(player)
           pscore = p.attributes["player1_score"]
           pscore = pscore + params["score"].to_i
 
