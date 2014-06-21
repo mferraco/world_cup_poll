@@ -7,7 +7,7 @@ class PollsController < ApplicationController
   # GET /polls
   # GET /polls.json
   def index
-    @polls = Poll.by_score.by_user
+    @polls = Poll.paid.by_score.by_user
   end
 
   def poll_list

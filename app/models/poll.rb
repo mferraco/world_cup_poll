@@ -54,6 +54,7 @@ class Poll < ActiveRecord::Base
   scope :by_score, -> { order('score DESC') }
   scope :by_user, -> { joins(:user).order('last_name, first_name, name') }
   scope :for_user, ->(user_id) { where("user_id = ?", user_id) }
+  scope :paid, -> { where("paid = ?", true) }
 
 
   def update_total

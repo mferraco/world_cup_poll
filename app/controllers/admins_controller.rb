@@ -40,7 +40,7 @@ class AdminsController < ApplicationController
       end
 
       if !player.blank? and !player.nil?
-        if p.player1 == player
+        if p.player1.inclue?(player)
           pscore = p.attributes["player1_score"]
           pscore = pscore + params["score"].to_i
 
@@ -48,7 +48,7 @@ class AdminsController < ApplicationController
           p.save
         end
 
-        if p.player2 == player
+        if p.player2.include?(player)
           pscore = p.attributes["player2_score"]
           pscore = pscore + params["score"].to_i
 

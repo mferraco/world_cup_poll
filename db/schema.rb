@@ -16,11 +16,6 @@ ActiveRecord::Schema.define(version: 20140618215652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "polls", force: true do |t|
     t.integer  "user_id"
     t.integer  "tiebreaker"
@@ -46,7 +41,7 @@ ActiveRecord::Schema.define(version: 20140618215652) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "round_of_sixteen",   default: 0
-    t.boolean  "paid",               default: false
+    t.boolean  "paid",               default: true
   end
 
   create_table "users", force: true do |t|
